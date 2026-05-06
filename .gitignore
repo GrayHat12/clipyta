@@ -1,0 +1,6 @@
+\.vscode
+\__pycache__
+*.pyc
+\*.egg-info
+*.html
+*.js

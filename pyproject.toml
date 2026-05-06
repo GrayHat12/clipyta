@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipyta"
+version = "0.0.1-dev"
+authors = [{ "name" = "Rahul Singh", "email" = "grayhathacks10@gmail.com" }]
+description = "Lightweigth table renderer for cli"
+readme = "README.md"
+requires-python = ">=3.9.2"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = ["typing_extensions"]
