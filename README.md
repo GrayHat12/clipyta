@@ -7,6 +7,8 @@
 
 Lightweigth table renderer for python.
 
+![screen](./docs/screen.gif)
+
 ## Installation
 
 Install using `pip install git+https://github.com/GrayHat12/clipyta.git`.
