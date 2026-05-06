@@ -28,7 +28,7 @@ def default_border_config() -> BorderConfig:
     }
 
 
-def genrerate_renderer[K, V](
+def generate_renderer[K, V](
     border_config: BorderConfig | None = default_border_config(),
     row_sorting: SortConfig[str] | Callable[[str], int] | None = None,
     col_sorting: SortConfig[dict[K, V]] | Callable[[
@@ -63,7 +63,7 @@ def genrerate_renderer[K, V](
         Scenario 1: Basic Custom Formatting
         Applying left-alignment and a custom sorting logic to automatically order 
         rows based on a specific dictionary key (e.g., 'age').
-        >>> renderer = genrerate_renderer(
+        >>> renderer = generate_renderer(
         ...     align=Alignment.left,
         ...     row_sorting=lambda row: row.get('age', 0)
         ... )
@@ -81,7 +81,7 @@ def genrerate_renderer[K, V](
         ...         'value': lambda p: f"${float(p):.2f}"
         ...     }
         ... }
-        >>> renderer = genrerate_renderer(transformations=transformations)
+        >>> renderer = generate_renderer(transformations=transformations)
 
         Scenario 3: Custom Layouts and Complex Sorting
         Creating a "markdown-style" table without outer bold borders, while simultaneously 
@@ -96,7 +96,7 @@ def genrerate_renderer[K, V](
         ...     sort=lambda row: row.get('username', ''),
         ...     reverse=True
         ... )
-        >>> renderer = genrerate_renderer(
+        >>> renderer = generate_renderer(
         ...     border_config=custom_borders,
         ...     row_sorting=row_sorter
         ... )
@@ -115,7 +115,7 @@ class Renderer(Generic[DK, DV]):
     This generic class manages the state and logic required to calculate dynamic column widths, 
     apply sorting configurations, execute data transformations, and render a visually aligned 
     table to standard output. It is generally recommended to instantiate this class using 
-    the `genrerate_renderer` factory function rather than initializing it directly.
+    the `generate_renderer` factory function rather than initializing it directly.
 
     Type Variables:
         DK: The expected type of the data dictionary keys.
@@ -242,7 +242,7 @@ class Renderer(Generic[DK, DV]):
             None: The final formatted table is printed directly to the standard output.
 
         Example:
-            >>> renderer = genrerate_renderer()
+            >>> renderer = generate_renderer()
             >>> data = [{'user': {'name': 'Alice', 'role': 'Admin'}}]
             >>> renderer.render(data)
             # Output is visually drawn to the console, featuring 'user.name' and 'user.role' columns.

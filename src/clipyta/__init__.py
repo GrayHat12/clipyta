@@ -1,5 +1,5 @@
-from .clipyta import genrerate_renderer, Renderer
+from .clipyta import generate_renderer, Renderer
 from .utils import BorderConfig, SortConfig, Transformation, Alignment
 
-__all__ = ['genrerate_renderer', 'Renderer',
+__all__ = ['generate_renderer', 'Renderer',
            'BorderConfig', 'SortConfig', 'Transformation', 'Alignment']
